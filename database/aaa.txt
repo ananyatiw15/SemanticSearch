@@ -1,0 +1,1 @@
+{"statusCode": 200, "body": "\"All CSV data inserted successfully into AWS Keyspaces!\""}

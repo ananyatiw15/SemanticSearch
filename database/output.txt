@@ -1,0 +1,1 @@
+{"statusCode": 500, "body": "\"<Error from server: code=2300 [Query invalid because of configuration issue] message=\\\"Keyspace research_data does not exist\\\">\""}
