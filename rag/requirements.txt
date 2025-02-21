@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+boto3
+pandas
+cassandra-driver
+sentence-transformers
+numpy
+faiss-cpu

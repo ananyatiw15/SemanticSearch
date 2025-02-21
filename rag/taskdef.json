@@ -1,0 +1,42 @@
+{
+  "family": "rag-api-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::<USERID>:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::<USERID>:role/taskRole",
+  "containerDefinitions": [
+    {
+      "name": "rag-api-container",
+      "image": "RAGDockerImageUrl",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "KEYSPACES_ENDPOINT",
+          "value": "cassandra.us-east-2.amazonaws.com"
+        },
+        { "name": "SERVICE_USERNAME", "value": "USERNAME OF IAM" },
+        {
+          "name": "SERVICE_PASSWORD",
+          "value": "PASSWORD OF IAM"
+        },
+        { "name": "CERT_PATH", "value": "CERT_PATH" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/rag-api-task",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
