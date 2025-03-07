@@ -1,9 +1,50 @@
-/* body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern UI Improvements */
+@layer utilities {
+    .input-box {
+        @apply bg-white/10 backdrop-blur-lg px-5 py-3 rounded-full
+           border border-white/20 w-80 sm:w-96 text-white outline-none;
+    }
+
+    .glow-button {
+        @apply px-6 py-3 bg-green-400 text-black font-semibold rounded-full
+           hover:bg-green-500 transition-all shadow-md;
+    }
+
+    .search-title {
+        @apply text-5xl font-bold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent drop-shadow-lg;
+    }
+}
+
+/* Removes the number input arrows */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  } */
+}
+
+.no-spinner {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+/* Animated Gradient Background */
+.animated-bg {
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
