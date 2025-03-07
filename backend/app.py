@@ -12,18 +12,15 @@ def query_research_papers():
     try:
         data = request.get_json()
         query = data.get("query", "").strip()
-        k = int(data.get("k", 10))  # Default to 10 results if not provided
+        k = int(data.get("k", 10))
 
         if not query:
             return jsonify({"error": "Query cannot be empty"}), 400
 
-        # 🔍 Debugging: Print the request being sent
         print(f"Sending request to {API_URL} with query: {query}, k: {k}")
 
-        # 🔄 Forward the request to the external API
         response = requests.post(API_URL, json={"query": query, "k": k}, headers={"Content-Type": "application/json"})
 
-        # 🔍 Debugging: Print the full response from external API
         print(f"Response Status Code: {response.status_code}")
         print(f"Response Content: {response.text}")
 
@@ -33,7 +30,7 @@ def query_research_papers():
         return jsonify(response.json())
 
     except Exception as e:
-        print(f"Error occurred: {str(e)}")  # Debugging
+        print(f"Error occurred: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':

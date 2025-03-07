@@ -4,12 +4,12 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "1024",
   "memory": "2048",
-  "executionRoleArn": "arn:aws:iam::<USERID>:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::<USERID>:role/taskRole",
+  "executionRoleArn": "arn:aws:iam::<USER_ID>:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::<USER_ID>:role/taskRole",
   "containerDefinitions": [
     {
-      "name": "rag-api-container",
-      "image": "RAGDockerImageUrl",
+      "name": "rag-apii-container",
+      "image": "Docker image URL for RAG",
       "essential": true,
       "portMappings": [
         {
@@ -25,9 +25,9 @@
         { "name": "SERVICE_USERNAME", "value": "USERNAME OF IAM" },
         {
           "name": "SERVICE_PASSWORD",
-          "value": "PASSWORD OF IAM"
+          "value": "PASSWORD OF SPECIFIC IAM"
         },
-        { "name": "CERT_PATH", "value": "CERT_PATH" }
+        { "name": "CERT_PATH", "value": "/app/sf-class2-root.crt" }
       ],
       "logConfiguration": {
         "logDriver": "awslogs",

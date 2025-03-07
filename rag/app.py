@@ -2,6 +2,7 @@ import os
 import ssl
 import numpy as np
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
@@ -15,6 +16,14 @@ import io
 import faiss
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 faiss_index = None
 docs_metadata = None
