@@ -40,6 +40,14 @@ SemanticSearch enables users to search for research papers by leveraging semanti
 
 
 
+
+![diagram-export-3-9-2025-3_58_17-AM](https://github.com/user-attachments/assets/09340238-1e37-454f-a010-b5fe83189d89)
+
+
+
+Detailed
+
+
 ![SemanticSearch](https://github.com/user-attachments/assets/cbb9e359-e88a-4f0e-a366-0f52dc6d7ecb)
 
 
