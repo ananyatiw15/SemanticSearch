@@ -1,6 +1,9 @@
 # SemanticSearch
 
 
+<img width="1680" alt="Screenshot 2025-03-09 at 2 41 51 AM" src="https://github.com/user-attachments/assets/b11a61ab-b41d-4551-84a0-1bc4026c7685" />
+
+
 
 
 
@@ -34,6 +37,10 @@ SemanticSearch enables users to search for research papers by leveraging semanti
 
 
 ## Architecture
+
+
+
+![SemanticSearch](https://github.com/user-attachments/assets/cbb9e359-e88a-4f0e-a366-0f52dc6d7ecb)
 
 
 
